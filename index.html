@@ -323,15 +323,15 @@ var tFilter = 1;
 function textureFilter(){
 document.addEventListener("keydown", (ev) => {
 
-  if (ev.key === "1") {
+  if (ev.key == "a") {
     tFilter = 1;
   }
 
-  if (ev.key === "2") {
+  if (ev.key == "b") {
     tFilter = 2;
   }
 
-  if (ev.key === "3") {
+  if (ev.key == "c") {
     tFilter = 3;
   }
 });
@@ -416,6 +416,7 @@ function drawStep() {
     <canvas id="miCanvas" width="500" height="500"></canvas>
 </body>
 </html>
+
 
 
 
