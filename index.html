@@ -319,53 +319,28 @@ gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexTextureCoordBuffer);
     auxTime = now;
   }
 
-var tFilter = 1;
-function textureFilter(){
-document.addEventListener("keydown", (ev) => {
-
-  if (ev.key == "a") {
-    tFilter = 1;
-  }
-
-  if (ev.key == "b") {
-    tFilter = 2;
-  }
-
-  if (ev.key == "c") {
-    tFilter = 3;
-  }
-});
-}
-	
 function textureConfig(texture) {
     gl.bindTexture(gl.TEXTURE_2D, texture);
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
 
-	if (tFilter == 1){
 	 //OPCION 1. NEAREST
-		alert("NEAREST");
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
     gl.bindTexture(gl.TEXTURE_2D, null);
-	}
-	if (tFilter == 2){
+
     //OPCION 2. LINEAR
-		alert("LINEAR");
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
+/*    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-	}
-	if (tFilter == 3) {
+*/
+	
 	//OPCION 3. MIPMAPS
-		alert("MIPMAPS");
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
+/*    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
     gl.generateMipmap(gl.TEXTURE_2D);
-	}
-
-
+*/
 
     gl.bindTexture(gl.TEXTURE_2D, null);
 
@@ -416,6 +391,7 @@ function drawStep() {
     <canvas id="miCanvas" width="500" height="500"></canvas>
 </body>
 </html>
+
 
 
 
