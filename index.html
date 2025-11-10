@@ -343,7 +343,7 @@ function textureConfig(texture) {
 
 	if (tFilter == 1){
 	 //OPCION 1. NEAREST
-		alert("NEAREST);
+		alert("NEAREST");
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
@@ -399,6 +399,7 @@ function drawStep() {
         initShaders();
         initBuffers();
         initTexture();
+		textureFilter();
 
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
         gl.enable(gl.DEPTH_TEST);
@@ -413,6 +414,7 @@ function drawStep() {
     <canvas id="miCanvas" width="500" height="500"></canvas>
 </body>
 </html>
+
 
 
 
